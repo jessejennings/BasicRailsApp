@@ -1,5 +1,7 @@
 == README
 
+"I changed the name of my app to "jessejennings-bloccit"
+
 I used the "skip Javascript files" option.
 
 
