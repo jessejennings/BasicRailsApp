@@ -104,11 +104,9 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-<<<<<<< HEAD
-    rails_serve_static_assets (0.0.4)
-=======
+
     rails_serve_static_assets (0.0.3)
->>>>>>> html-assignment
+
     rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
