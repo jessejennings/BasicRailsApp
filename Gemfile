@@ -35,6 +35,8 @@ gem 'figaro', '1.0'
 gem 'faker'
 
 gem 'devise'
+
+gem 'pundit'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
