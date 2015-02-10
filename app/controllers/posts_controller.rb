@@ -1,16 +1,16 @@
 class PostsController < ApplicationController
-  def show
+  def show # Has a view show.html.erb
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
   end
 
-  def new
+  def new # Has a view new.html.erb
      @topic = Topic.find(params[:topic_id])
     @post = Post.new
     authorize @post
   end
 
-  def edit
+  def edit # Has a view edit.html.erb
      @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
