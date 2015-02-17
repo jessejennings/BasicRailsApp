@@ -46,6 +46,8 @@ gem 'mini_magick'
 
 gem 'fog'
 
+gem 'redcarpet'
+
 
 
 
