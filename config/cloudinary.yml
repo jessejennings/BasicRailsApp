@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hecvg250b
+  api_key: '921389418577932'
+  api_secret: VrwzAIjxjexwgFTL94eBLtChlAU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hecvg250b
+  api_key: '921389418577932'
+  api_secret: VrwzAIjxjexwgFTL94eBLtChlAU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hecvg250b
+  api_key: '921389418577932'
+  api_secret: VrwzAIjxjexwgFTL94eBLtChlAU
+  enhance_image_tag: true
+  static_image_support: false
