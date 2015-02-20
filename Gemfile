@@ -50,6 +50,8 @@ gem 'redcarpet'
 
 gem 'will_paginate', '~>3.0.5'
 
+gem 'binding_of_caller'
+gem 'better_errors'
 
 
 

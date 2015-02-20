@@ -11,4 +11,6 @@
    <%= post.user.name %></br>
    <%= post.comments.count %> Comments
    </small>
- 
+   <% if policy(@topic).destroy? %>
+   <%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this topic?' } %>
+   <% end %>
