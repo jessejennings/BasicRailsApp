@@ -5,5 +5,11 @@ module ApplicationHelper
    else
      content_tag :div, capture(&block), class: 'form-group'
    end
-  end
  end
+ 
+ def comment_url_helper(comment)
+  post = comment.post
+  topic = post.topic
+  [topic, post, comment]
+ end
+end

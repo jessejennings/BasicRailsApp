@@ -17,4 +17,18 @@
     <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delte this post?' } %>
     <% end %>
   </div>
+  
+  <div class='row'>
+    
+    <div class='col-md-6'>
+      <h2>Comments</h2>
+      <%= render partial: '/comments/comment', collection: @comments %>
+    </div>
+    
+    <div class='col-md-6'>
+      <h2>Post a comment</h2>
+      <%= render partial: 'comments/form', locals: {topic: @topic, post: @post} %>
+    </div>
+    
+  </div>
 </div>

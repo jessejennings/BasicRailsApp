@@ -1,0 +1,12 @@
+<%= content_tag :div, class: 'media', id:'comment-#<%= message.id %>' do %>
+<blockquote>
+    <p><%= comment.body %></p>
+    <footer>
+    <%= image_tag(User.find(comment.user_id).avatar.tiny.url) %> <%= User.find(comment.user_id).name || 
+    User.find(comment.user_id).email %>, posted <%= time_ago_in_words(comment.created_at) %> ago. 
+    <% if policy(comment).destroy? %>
+        <%= link_to "Delete", comment_url_helper(comment), method: :delete %>
+    <% end %>
+    </footer>
+</blockquote>
+<% end %>
