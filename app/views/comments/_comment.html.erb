@@ -1,12 +1,14 @@
-<%= content_tag :div, class: 'media', id:'comment-#<%= message.id %>' do %>
-<blockquote>
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+  <%= link_to '#', class: 'pull-left' do %>
+    <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
+  <% end %>
+  <div class="media-body">
+    <small>
+      <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <% if policy(comment).destroy? %>
+        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
+    </small>
     <p><%= comment.body %></p>
-    <footer>
-    <%= image_tag(User.find(comment.user_id).avatar.tiny.url) %> <%= User.find(comment.user_id).name || 
-    User.find(comment.user_id).email %>, posted <%= time_ago_in_words(comment.created_at) %> ago. 
-    <% if policy(comment).destroy? %>
-        <%= link_to "Delete", comment_url_helper(comment), method: :delete %>
-    <% end %>
-    </footer>
-</blockquote>
-<% end %>
+  </div>
+ <% end %>
