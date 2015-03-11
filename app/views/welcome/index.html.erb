@@ -1,2 +1,29 @@
-<h1>Welcome to Bloccit</h1>
-<p>This is the home page for Bloccit.</p>
+<br/>
+<div class="jumbotron">
+  <p class="text-primary" style="font-size:400%"><strong>Bloccit</strong></p>
+  <p class="lead text-primary"><em>Bloccit is a resource for sharing anything with your friends!</em></p>
+  <% if !current_user%>
+  <p class="text-primary">
+  <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %> or
+  <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %> today!
+  </p>
+  <% end %>
+</div>
+
+<div class="row">
+   
+  <div class="col-md-4">
+  <h2>Post</h2>
+  <p>Share your thoughts about subjects that are important to you.</p>
+  </div>
+
+  <div class="col-md-4">
+  <h2>Comment</h2>
+  <p>Your opinion counts! But you have to make yourself heard first!</p>
+  </div>
+
+  <div class="col-md-4">
+  <h2>Stay Informed</h2>
+  <p>See the most active topics as well as trending subjects every day!</p>
+  </div>
+</div>
