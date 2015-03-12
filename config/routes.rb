@@ -8,7 +8,7 @@ Bloccit::Application.routes.draw do
   get 'comments/index'
 
   devise_for :users
-    resources :users, only: [:update]
+    resources :users, only: [:update, :show]
     resources :topics do
       resources :posts, except: [:index] do
         resources :comments, only: [:create, :destroy]
