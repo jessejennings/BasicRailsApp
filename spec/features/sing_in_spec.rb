@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Sing in flow"  do 
-  include TestFactories
+  include FactoryGirl
 
   describe "successful" do
     it "redirects to the topics index" do

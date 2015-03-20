@@ -2,7 +2,7 @@ require 'rails helper'
 
 describe "Visiting profiles" do
 
-  include TestFactories
+  include FactoryGirl
 
   before do
     @user = authenticated_user

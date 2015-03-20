@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe Comment down_vote?
 
-    include Test Factories
+    include FactoryGirl
     describe "after_create" do 
         
         before do

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe VotesController do
-    include Testfactories
+    include FactoryGirl
     
     describe '#up_vote' do
         it "adds an up-vote to the post" do
