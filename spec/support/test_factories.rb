@@ -1,5 +1,5 @@
 module TestFactories
-end
+
     def associated_post(options={})
       post_options = {
        title: 'Post title',
@@ -16,3 +16,4 @@ end
       user.save
       user
     end
+end

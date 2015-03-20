@@ -1,11 +1,18 @@
-class VotesController < 
+class VotesController < ApplicationController 
     before_action :load_post_and_vote
+
     
-    private
-    
-    def load_post_and_vote
+    def up_vote
+        update_vote!(1)
+        redirect_to: back
     end
-    
+
+    def down_vote
+        update_vote!(-1)
+        redirect_to: back
+    end
+
+
     private
     
     def update_vote!(new_value)
@@ -18,17 +25,10 @@ class VotesController <
             @vote.save
         end
     end
-    def up_vote
-        
+    def load_post_and_vote
         @post = Post.find(params[:post_id])
         @vote = @post.votes.where(user_id: current_user_id).first
-        if @vote
-            @vote.update_attribute(:value, 1)
-        else
-            @vote = current_user.votes.create(value: 1, post: @post)
-        end
-         # http://apidock.com/rails/ActionController/Base/redirect_to
-        redirect_to :back
+
     end
 end
 
