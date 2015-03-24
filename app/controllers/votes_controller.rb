@@ -1,6 +1,12 @@
 class VotesController < ApplicationController 
     before_action :load_post_and_vote
 
+    def load_post_and_vote
+        @post = Post.find(params[:post_id])
+        @vote = @post.votes.where(user_id: current_user_id).first
+
+    end
+
     
     def up_vote
         update_vote!(1)
@@ -25,11 +31,7 @@ class VotesController < ApplicationController
             @vote.save
         end
     end
-    def load_post_and_vote
-        @post = Post.find(params[:post_id])
-        @vote = @post.votes.where(user_id: current_user_id).first
-
-    end
+    
 end
 
         

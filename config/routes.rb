@@ -1,4 +1,4 @@
-Bloccit::Application.routes.draw do
+ Bloccit::Application.routes.draw do
  
 devise_for :users
 

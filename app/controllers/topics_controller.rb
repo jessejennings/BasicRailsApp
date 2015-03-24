@@ -23,12 +23,12 @@ class TopicsController < ApplicationController
      @topic = Topic.new(topic_params)
     
      authorize @topic
-     if @topic.save
-       redirect_to @topic, notice: "Topic was saved successfully."
-     else
-       flash[:error] = "Error creating topic. Please try again."
-       render :new
-     end
+       if @topic.save
+         redirect_to @topic, notice: "Topic was saved successfully."
+       else
+         flash[:error] = "Error creating topic. Please try again."
+         render :new
+       end 
   end
  
   def update

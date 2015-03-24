@@ -15,7 +15,7 @@ class Post < ActiveRecord::Base
   
   def up_votes
     self.votes.where(value: 1).count
-  end
+  end 
   def down_votes
     self.votes.where(value: -1).count
   end
