@@ -1,4 +1,4 @@
- Bloccit::Application.routes.draw do
+Bloccit::Application.routes.draw do
  
 devise_for :users
 
@@ -11,8 +11,8 @@ end
 resources :posts, only: [:index] do
   resources :comments, only: [:create, :destroy]
   resources :favorites, only: [:create, :destroy]
-  get '/up_vote' => 'votes#up_vote', as: :up_vote
-  get '/down_vote' => 'votes#down_vote', as: :down_vote
+  post '/up_vote' => 'votes#up_vote', as: :up_vote
+  post '/down_vote' => 'votes#down_vote', as: :down_vote
 end
 
 
