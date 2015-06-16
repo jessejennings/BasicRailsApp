@@ -1,21 +1,25 @@
 class FavoritesController < ApplicationController
-    def create_vote
+    def create
+        @topic = Topic.find(params[:topic_id])
         @post = Post.find(params[:post_id])
         favorite = current_user.favorites.build(post: @post)
         if favorite.save
-        #Add code to generate a success flash and redirect to @post
-        #Remember the path shortcut: [@post.topic, @post]
+            redirect_to [@topic, @post], notice: "You favor this post"
         else
-        #Add code to generate a failure flash and redirect to @post
+            flash[:error] = 'Failed to create a favorite.'
+            redirect_to [@topic, @post] 
         end
     end
     def destroy
-        #Get the post from the params
-        #Find the current user's favorite with the ID in the params
+        @topic = Topic.find(params[:topic_id])
+        @post = Post.find(params[:post_id])
+        favorite = current_user.favorites.find(params[:id])
         if favorite.destroy
-            #Flash succes and redirect to @post
+            redirect_to [@topic, @post], notice: "Favorite deleted"
+          
         else
-            #Flash error and redirect to @post
+            flash[:error] = 'Failed to  a favorite.'
+            redirect_to [@topic, @post] 
         end
     end
 end

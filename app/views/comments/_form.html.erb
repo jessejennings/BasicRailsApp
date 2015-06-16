@@ -1,10 +1,11 @@
-<%= form_for [topic, post, post.comments.new ], remote: true do |f| %>
+<%= form_for [topic, post, post.comments.new ] do |f| %>
     <% if comment.errors.any? %>
         <div class="alert alert-danger">
             <h4>There are <%= pluralize(comments.errors.count, "errors") %>.</h4>
             <ul>
                 <% comment.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
+                <% end %>
             </ul>
         </div>
     <% end %>

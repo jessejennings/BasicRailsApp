@@ -15,8 +15,8 @@
  #Create Topics
   15.times do
     Topic.create!(
-        name:         Faker::Lorem.sentence,
-        description:  Faker::Lorem.paragraph
+      name:         Faker::Lorem.sentence,
+      description:  Faker::Lorem.paragraph
   )
 end
 topics = Topic.all
