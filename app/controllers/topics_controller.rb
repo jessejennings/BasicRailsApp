@@ -3,32 +3,32 @@ class TopicsController < ApplicationController
      @topics = Topic.paginate(page: params[:page], per_page: 10)
   end
 
-  def new
-     @topic = Topic.new
-     authorize @topic
-  end
-
   def show
     @topic = Topic.find(params[:id])
     authorize @topic
     @posts = @topic.posts.includes(:user).includes(:comments).paginate(page: params[:page], per_page: 10)
   end
 
-  def edit
-     @topic = Topic.find(params[:id])
+  def new
+     @topic = Topic.new
      authorize @topic
   end
- 
+
   def create
      @topic = Topic.new(topic_params)
     
      authorize @topic
-       if @topic.save
+        if @topic.save
          redirect_to @topic, notice: "Topic was saved successfully."
-       else
+        else
          flash[:error] = "Error creating topic. Please try again."
          render :new
-       end 
+        end 
+  end
+
+  def edit
+     @topic = Topic.find(params[:id])
+     authorize @topic
   end
  
   def update
