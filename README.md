@@ -1,14 +1,11 @@
 == README
 
-"I changed the name of my app to "jessejennings-bloccit"
-
-I used the "skip Javascript files" option.
 
 
 
-## Bloccit: a Reddit clone to teach the fundamentals of web development and Rails 4.
 
-Made with my mentor at [Bloc](http://bloc.io).
+## KnockIt: a Reddit clone to teach the fundamentals of web development and Rails 4.
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
