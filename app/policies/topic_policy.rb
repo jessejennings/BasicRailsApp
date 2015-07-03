@@ -5,12 +5,13 @@ class TopicPolicy < ApplicationPolicy
   end
  
   def create?
-    user.present? && user.admin?
+    user.present?
   end
 
   def update?
     create?
   end
+  
   def show?
     record.public? || user.present?
   end
