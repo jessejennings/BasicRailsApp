@@ -18,3 +18,4 @@
 /.c9/
 # Ignore application configuration
 /config/application.yml
+/public/uploads/tmp/*

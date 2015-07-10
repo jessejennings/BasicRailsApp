@@ -1,11 +1,11 @@
 # encoding: utf-8
 
 class AvatarUploader < CarrierWave::Uploader::Base
-
+  storage :file
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
  
-  include Cloudinary::CarrierWave
+  include CarrierWave::MiniMagick
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -40,7 +40,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
   
   version :profile do
-    process resize_to_fill: [20, 20]
+    process resize_to_fill: [100, 100]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
